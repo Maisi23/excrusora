@@ -122,7 +122,7 @@ module lugar_engranajes(){
     color("blue")rotate([90,0,90])translate([-390,-217,-110]) import ("archivos usados/01 - Top Parts/recreator3d-part-5b-back-motor-mount.stl");
     }
    
- 
+ //prueba
 madera();
 tornillo();
 tapa_botella();
