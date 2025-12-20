@@ -1,6 +1,17 @@
 $fn = 100;
 
 //lo que está en azul está para imprimir
+module madera(){
+    color("green"){
+    cube([230,700,5],center=true);
+    }
+}
+//
+module tornillo(){
+    //es un cilindro, pero en la vida real un tornillo
+    translate([50,280,0]) color("grey") cylinder(h =200,r=3.5);
+}
+//
 
 
 module cortadora(){
@@ -12,28 +23,44 @@ module cortadora(){
 module soporte_cuchilla(){
     //rueditas que sostienen a la cuchilla, son 4
       
-      translate([-209,197,-37.5])color("blue")  import("archivos usados/Spacer_8mm.stl");
+      //translate([-209,197,-37.5])color("blue")  import("archivos usados/Spacer_6mm.stl");
       
       
-      translate([-245,197,-37.5])color("blue")import("archivos usados/Spacer_8mm.stl");
+      //translate([-245,197,-37.5])color("blue")import("archivos usados/Spacer_6mm.stl");
      
    //
-      translate([-209,197,-29])color("blue")  import("archivos usados/Spacer_8mm.stl");
+      translate([-209,197,-29])color("blue")  import("archivos usados/Spacer_8|mm.stl");
      
      //
       translate([-245,197,-29])color("blue")import("archivos usados/Spacer_8mm.stl");
       //
       
-      translate([20.5,265,40])rotate([0,180,0])color("#64C1F5")import("archivos usados/rosca.3mf");
+      //translate([20.5,265,40])rotate([0,180,0])color("#64C1F5")import("archivos usados/rosca.3mf");
   //
       
-      translate([-15,265,40])rotate([0,180,0])color("#64C1F5")import("archivos usados/rosca.3mf");
+      //translate([-15,265,40])rotate([0,180,0])color("#64C1F5")import("archivos usados/rosca.3mf");
       
   }
-  
 //
+module tapa_botella(){
+    
+    translate([50,280,190])color("blue"){{
+        
+        //parte donde se sostiene la botella
+        difference(){
+            cylinder(h = 30, d=35);
+            cylinder(h = 30, d=28);
+        }
+        //decoracion, la tapita de arriba
+        difference(){
+            translate([0,0,30])cylinder(h=0.0001, d=45);
+            translate([0,0,30]) cylinder(h=0.0001,d=28);
+        }
+    }}
+}
 
-
+//
+/*
 module pico_caliente(){
       difference(){
       translate([3,120,17])color("gold")cube([30,20,30],center=true);
@@ -58,37 +85,8 @@ module pico_caliente(){
 );
 }     
   }
-//
+
   
-module madera(){
-    color("green"){
-    cube([230,700,5],center=true);
-    }
-}
-//
-
-module tornillo(){
-    //es un cilindro, pero en la vida real un tornillo
-    translate([50,280,0]) color("grey") cylinder(h =200,r=3.5);
-}
-//
-
-module tapa_botella(){
-    
-    translate([50,280,190])color("blue"){{
-        
-        //parte donde se sostiene la botella
-        difference(){
-            cylinder(h = 30, d=35);
-            cylinder(h = 30, d=28);
-        }
-        //decoracion, la tapita de arriba
-        difference(){
-            translate([0,0,30])cylinder(h=0.0001, d=45);
-            translate([0,0,30]) cylinder(h=0.0001,d=28);
-        }
-    }}
-}
 //  
      
 module sostenes_parte_medio(){
@@ -122,14 +120,14 @@ module lugar_engranajes(){
     color("blue")rotate([90,0,90])translate([-390,-217,-110]) import ("archivos usados/01 - Top Parts/recreator3d-part-5b-back-motor-mount.stl");
     }
    
- //prueba
-madera();
-tornillo();
-tapa_botella();
+*/
+//madera();
+//tornillo();
+//tapa_botella();
 cortadora();
 soporte_cuchilla();
-pico_caliente();
-sostenes_parte_medio();
-rodillo();
-tamborcito_giratorio();
-lugar_engranajes();
+//pico_caliente();
+//sostenes_parte_medio();
+//rodillo();
+//tamborcito_giratorio();
+//lugar_engranajes();
